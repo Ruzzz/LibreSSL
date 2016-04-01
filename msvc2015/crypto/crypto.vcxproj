@@ -92,7 +92,7 @@
       </ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <WarningLevel>Level4</WarningLevel>
-      <PreprocessorDefinitions>_DEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;OPENSSLDIR="c:/Windows/OpenSSL";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Optimization>Disabled</Optimization>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
@@ -122,7 +122,7 @@
       </ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <WarningLevel>Level4</WarningLevel>
-      <PreprocessorDefinitions>_DEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;OPENSSLDIR="c:/Windows/OpenSSL";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Optimization>Disabled</Optimization>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
@@ -152,7 +152,7 @@
       <Optimization>Full</Optimization>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <WarningLevel>Level4</WarningLevel>
-      <PreprocessorDefinitions>NDEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;OPENSSLDIR="c:/Windows/OpenSSL";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
@@ -180,7 +180,7 @@
       <Optimization>Full</Optimization>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <WarningLevel>Level4</WarningLevel>
-      <PreprocessorDefinitions>NDEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;OPENSSLDIR="c:/Windows/OpenSSL";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
