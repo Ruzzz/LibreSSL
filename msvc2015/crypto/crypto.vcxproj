@@ -1,0 +1,757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{703CBFFB-0BFB-3B50-B88E-BDFCE35683C4}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>crypto</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)..\..\lib\</OutDir>
+    <TargetName>lib$(ProjectName)d</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>lib$(ProjectName)d</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(ProjectDir)..\..\lib64\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)..\..\lib\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>lib$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>lib$(ProjectName)</TargetName>
+    <OutDir>$(ProjectDir)..\..\lib64\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;$(ProjectDir)..\..\crypto;$(ProjectDir)..\..\crypto\asn1;$(ProjectDir)..\..\crypto\dsa;$(ProjectDir)..\..\crypto\evp;$(ProjectDir)..\..\crypto\modes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4057;4100;4127;4242;4244;4706;4820;4996</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>_DEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;$(ProjectDir)..\..\crypto;$(ProjectDir)..\..\crypto\asn1;$(ProjectDir)..\..\crypto\dsa;$(ProjectDir)..\..\crypto\evp;$(ProjectDir)..\..\crypto\modes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;$(ProjectDir)..\..\crypto;$(ProjectDir)..\..\crypto\asn1;$(ProjectDir)..\..\crypto\dsa;$(ProjectDir)..\..\crypto\evp;$(ProjectDir)..\..\crypto\modes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;$(ProjectDir)..\..\crypto;$(ProjectDir)..\..\crypto\asn1;$(ProjectDir)..\..\crypto\dsa;$(ProjectDir)..\..\crypto\evp;$(ProjectDir)..\..\crypto\modes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4057;4100;4127;4242;4244;4706;4820;4996</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>_DEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;$(ProjectDir)..\..\crypto;$(ProjectDir)..\..\crypto\asn1;$(ProjectDir)..\..\crypto\dsa;$(ProjectDir)..\..\crypto\evp;$(ProjectDir)..\..\crypto\modes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;$(ProjectDir)..\..\crypto;$(ProjectDir)..\..\crypto\asn1;$(ProjectDir)..\..\crypto\dsa;$(ProjectDir)..\..\crypto\evp;$(ProjectDir)..\..\crypto\modes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;$(ProjectDir)..\..\crypto;$(ProjectDir)..\..\crypto\asn1;$(ProjectDir)..\..\crypto\dsa;$(ProjectDir)..\..\crypto\evp;$(ProjectDir)..\..\crypto\modes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4057;4100;4127;4242;4244;4706;4820;4996</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <Optimization>Full</Optimization>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;$(ProjectDir)..\..\crypto;$(ProjectDir)..\..\crypto\asn1;$(ProjectDir)..\..\crypto\dsa;$(ProjectDir)..\..\crypto\evp;$(ProjectDir)..\..\crypto\modes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;$(ProjectDir)..\..\crypto;$(ProjectDir)..\..\crypto\asn1;$(ProjectDir)..\..\crypto\dsa;$(ProjectDir)..\..\crypto\evp;$(ProjectDir)..\..\crypto\modes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;$(ProjectDir)..\..\crypto;$(ProjectDir)..\..\crypto\asn1;$(ProjectDir)..\..\crypto\dsa;$(ProjectDir)..\..\crypto\evp;$(ProjectDir)..\..\crypto\modes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4057;4100;4127;4242;4244;4706;4820;4996</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <Optimization>Full</Optimization>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;$(ProjectDir)..\..\crypto;$(ProjectDir)..\..\crypto\asn1;$(ProjectDir)..\..\crypto\dsa;$(ProjectDir)..\..\crypto\evp;$(ProjectDir)..\..\crypto\modes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;$(ProjectDir)..\..\crypto;$(ProjectDir)..\..\crypto\asn1;$(ProjectDir)..\..\crypto\dsa;$(ProjectDir)..\..\crypto\evp;$(ProjectDir)..\..\crypto\modes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(ProjectDir)..\..\crypto\aes\aes_cbc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\aes\aes_core.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\camellia\camellia.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\camellia\cmll_cbc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rc4\rc4_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rc4\rc4_skey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\whrlpool\wp_block.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\cpt_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\cryptlib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\cversion.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ex_data.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\malloc-wrapper.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\mem_clr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\mem_dbg.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\o_init.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\o_str.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\o_time.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\aes\aes_cfb.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\aes\aes_ctr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\aes\aes_ecb.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\aes\aes_ige.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\aes\aes_misc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\aes\aes_ofb.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\aes\aes_wrap.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_bitstr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_bool.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_bytes.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_d2i_fp.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_digest.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_dup.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_enum.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_i2d_fp.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_int.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_mbstr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_object.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_octet.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_print.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_set.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_sign.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_strex.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_strnid.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_time.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_time_tm.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_type.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_utf8.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\a_verify.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\ameth_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\asn1_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\asn1_gen.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\asn1_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\asn1_par.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\asn_mime.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\asn_moid.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\asn_pack.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\bio_asn1.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\bio_ndef.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\d2i_pr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\d2i_pu.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\evp_asn1.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\f_enum.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\f_int.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\f_string.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\i2d_pr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\i2d_pu.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\n_pkey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\nsseq.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\p5_pbe.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\p5_pbev2.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\p8_pkey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\t_bitst.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\t_crl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\t_pkey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\t_req.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\t_spki.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\t_x509.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\t_x509a.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\tasn_dec.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\tasn_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\tasn_fre.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\tasn_new.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\tasn_prn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\tasn_typ.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\tasn_utl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_algor.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_attrib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_bignum.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_crl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_exten.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_info.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_long.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_name.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_nx509.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_pkey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_pubkey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_req.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_sig.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_spki.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_val.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_x509.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\asn1\x_x509a.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bf\bf_cfb64.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bf\bf_ecb.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bf\bf_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bf\bf_ofb64.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bf\bf_skey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\b_dump.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\b_print.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\b_sock.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bf_buff.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bf_nbio.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bf_null.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bio_cb.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bio_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bio_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bss_acpt.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bss_bio.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bss_conn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bss_dgram.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bss_fd.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bss_file.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bss_mem.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bss_null.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\bss_sock.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_add.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_asm.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_blind.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_const.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_ctx.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_depr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_div.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_exp.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_exp2.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_gcd.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_gf2m.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_kron.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_mod.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_mont.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_mpi.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_mul.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_nist.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_prime.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_print.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_rand.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_recp.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_shift.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_sqr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_sqrt.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_word.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bn\bn_x931p.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\buffer\buf_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\buffer\buf_str.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\buffer\buffer.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\camellia\cmll_cfb.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\camellia\cmll_ctr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\camellia\cmll_ecb.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\camellia\cmll_misc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\camellia\cmll_ofb.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\cast\c_cfb64.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\cast\c_ecb.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\cast\c_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\cast\c_ofb64.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\cast\c_skey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\chacha\chacha.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\cmac\cm_ameth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\cmac\cm_pmeth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\cmac\cmac.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\comp\c_rle.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\comp\c_zlib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\comp\comp_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\comp\comp_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\conf\conf_api.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\conf\conf_def.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\conf\conf_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\conf\conf_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\conf\conf_mall.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\conf\conf_mod.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\conf\conf_sap.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\cbc_cksm.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\cbc_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\cfb64ede.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\cfb64enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\cfb_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\des_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\ecb3_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\ecb_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\ede_cbcm_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\enc_read.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\enc_writ.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\fcrypt.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\fcrypt_b.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\ofb64ede.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\ofb64enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\ofb_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\pcbc_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\qud_cksm.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\rand_key.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\set_key.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\str2key.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\des\xcbc_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dh\dh_ameth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dh\dh_asn1.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dh\dh_check.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dh\dh_depr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dh\dh_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dh\dh_gen.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dh\dh_key.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dh\dh_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dh\dh_pmeth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dh\dh_prn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dsa\dsa_ameth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dsa\dsa_asn1.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dsa\dsa_depr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dsa\dsa_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dsa\dsa_gen.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dsa\dsa_key.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dsa\dsa_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dsa\dsa_ossl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dsa\dsa_pmeth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dsa\dsa_prn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dsa\dsa_sign.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dsa\dsa_vrf.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dso\dso_dlfcn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dso\dso_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dso\dso_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dso\dso_null.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\dso\dso_openssl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec2_mult.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec2_oct.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec2_smpl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec_ameth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec_asn1.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec_check.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec_curve.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec_cvt.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec_key.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec_mult.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec_oct.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec_pmeth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ec_print.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\eck_prn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ecp_mont.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ecp_nist.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ecp_oct.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ec\ecp_smpl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ecdh\ech_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ecdh\ech_key.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ecdh\ech_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ecdsa\ecs_asn1.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ecdsa\ecs_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ecdsa\ecs_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ecdsa\ecs_ossl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ecdsa\ecs_sign.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ecdsa\ecs_vrf.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\eng_all.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\eng_cnf.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\eng_ctrl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\eng_dyn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\eng_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\eng_fat.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\eng_init.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\eng_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\eng_list.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\eng_openssl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\eng_pkey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\eng_table.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\tb_asnmth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\tb_cipher.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\tb_dh.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\tb_digest.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\tb_dsa.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\tb_ecdh.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\tb_ecdsa.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\tb_pkmeth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\tb_rand.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\tb_rsa.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\engine\tb_store.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\err\err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\err\err_all.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\err\err_prn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\bio_b64.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\bio_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\bio_md.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\c_all.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\digest.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_aes.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_aes_cbc_hmac_sha1.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_bf.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_camellia.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_cast.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_chacha.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_chacha20poly1305.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_des.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_des3.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_gost2814789.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_idea.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_null.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_old.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_rc2.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_rc4.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_rc4_hmac_md5.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\e_xcbc_d.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\encode.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\evp_aead.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\evp_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\evp_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\evp_key.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\evp_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\evp_pbe.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\evp_pkey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\m_dss.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\m_dss1.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\m_ecdsa.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\m_gost2814789.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\m_gostr341194.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\m_md4.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\m_md5.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\m_null.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\m_ripemd.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\m_sha1.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\m_sigver.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\m_streebog.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\m_wp.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\names.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\p5_crpt.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\p5_crpt2.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\p_dec.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\p_enc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\p_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\p_open.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\p_seal.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\p_sign.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\p_verify.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\pmeth_fn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\pmeth_gn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\evp\pmeth_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\gost\gost2814789.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\gost\gost89_keywrap.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\gost\gost89_params.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\gost\gost89imit_ameth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\gost\gost89imit_pmeth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\gost\gost_asn1.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\gost\gost_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\gost\gostr341001.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\gost\gostr341001_ameth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\gost\gostr341001_key.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\gost\gostr341001_params.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\gost\gostr341001_pmeth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\gost\gostr341194.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\gost\streebog.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\hmac\hm_ameth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\hmac\hm_pmeth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\hmac\hmac.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\idea\i_cbc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\idea\i_cfb64.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\idea\i_ecb.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\idea\i_ofb64.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\idea\i_skey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\krb5\krb5_asn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\lhash\lh_stats.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\lhash\lhash.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\md4\md4_dgst.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\md4\md4_one.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\md5\md5_dgst.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\md5\md5_one.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\modes\cbc128.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\modes\ccm128.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\modes\cfb128.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\modes\ctr128.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\modes\cts128.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\modes\gcm128.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\modes\ofb128.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\modes\xts128.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\objects\o_names.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\objects\obj_dat.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\objects\obj_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\objects\obj_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\objects\obj_xref.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ocsp\ocsp_asn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ocsp\ocsp_cl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ocsp\ocsp_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ocsp\ocsp_ext.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ocsp\ocsp_ht.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ocsp\ocsp_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ocsp\ocsp_prn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ocsp\ocsp_srv.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ocsp\ocsp_vfy.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pem\pem_all.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pem\pem_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pem\pem_info.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pem\pem_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pem\pem_oth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pem\pem_pk8.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pem\pem_pkey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pem\pem_seal.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pem\pem_sign.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pem\pem_x509.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pem\pem_xaux.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pem\pvkfmt.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\p12_add.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\p12_asn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\p12_attr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\p12_crpt.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\p12_crt.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\p12_decr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\p12_init.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\p12_key.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\p12_kiss.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\p12_mutl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\p12_npas.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\p12_p8d.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\p12_p8e.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\p12_utl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs12\pk12err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs7\bio_pk7.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs7\pk7_asn1.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs7\pk7_attr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs7\pk7_doit.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs7\pk7_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs7\pk7_mime.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs7\pk7_smime.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\pkcs7\pkcs7err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\poly1305\poly1305.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rand\rand_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rand\rand_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rand\randfile.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rc2\rc2_cbc.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rc2\rc2_ecb.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rc2\rc2_skey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rc2\rc2cfb64.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rc2\rc2ofb64.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ripemd\rmd_dgst.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ripemd\rmd_one.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_ameth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_asn1.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_chk.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_crpt.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_depr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_eay.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_gen.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_none.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_oaep.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_pk1.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_pmeth.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_prn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_pss.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_saos.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_sign.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_ssl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\rsa\rsa_x931.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\sha\sha1_one.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\sha\sha1dgst.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\sha\sha256.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\sha\sha512.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\stack\stack.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ts\ts_asn1.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ts\ts_conf.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ts\ts_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ts\ts_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ts\ts_req_print.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ts\ts_req_utils.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ts\ts_rsp_print.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ts\ts_rsp_sign.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ts\ts_rsp_utils.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ts\ts_rsp_verify.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ts\ts_verify_ctx.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\txt_db\txt_db.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ui\ui_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ui\ui_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ui\ui_util.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\whrlpool\wp_dgst.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\by_dir.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\by_file.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\by_mem.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_att.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_cmp.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_d2.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_def.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_ext.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_lu.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_obj.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_r2x.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_req.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_set.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_trs.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_txt.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_v3.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_vfy.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509_vpm.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509cset.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509name.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509rset.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509spki.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x509type.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509\x_all.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\pcy_cache.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\pcy_data.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\pcy_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\pcy_map.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\pcy_node.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\pcy_tree.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_akey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_akeya.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_alt.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_bcons.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_bitst.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_conf.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_cpols.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_crld.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_enum.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_extku.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_genn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_ia5.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_info.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_int.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_lib.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_ncons.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_ocsp.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_pci.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_pcia.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_pcons.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_pku.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_pmaps.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_prn.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_purp.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_skey.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_sxnet.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3_utl.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\x509v3\v3err.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\bio\b_win.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\ui\ui_openssl_win.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\compat\posix_win.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\compat\bsd-asprintf.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\compat\inet_pton.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\compat\reallocarray.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\compat\strcasecmp.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\compat\strlcat.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\compat\strlcpy.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\compat\strndup.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\compat\timegm.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\compat\explicit_bzero_win.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\compat\arc4random.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\compat\getentropy_win.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\compat\timingsafe_bcmp.c" />
+    <ClCompile Include="$(ProjectDir)..\..\crypto\compat\timingsafe_memcmp.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
