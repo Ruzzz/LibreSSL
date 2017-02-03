@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGUID>{76804640-1891-3DFD-9D5B-D859238F3E7C}</ProjectGUID>
+    <ProjectGUID>{5ED2F6B9-744D-3FB4-A35C-8D073A938630}</ProjectGUID>
     <Keyword>Win32Proj</Keyword>
     <Platform>Win32</Platform>
-    <ProjectName>libssl</ProjectName>
+    <ProjectName>libtls</ProjectName>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -76,17 +76,24 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\</IntDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(ProjectDir)..\..\lib64\</OutDir>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(ProjectName)32MTd</TargetName>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(ProjectDir)..\..\lib64\</OutDir>
+    <OutDir>$(ProjectDir)..\..\lib\</OutDir>
+    <TargetName>$(ProjectName)64MTd</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(ProjectDir)..\..\lib\</OutDir>
+    <TargetName>$(ProjectName)64MT</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>$(ProjectName)32MT</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\ssl;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\tls;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsC</CompileAs>
       <DisableSpecificWarnings>4057;4100;4127;4242;4244;4706;4820;4996</DisableSpecificWarnings>
       <ExceptionHandling>
@@ -95,17 +102,15 @@
       <Optimization>Disabled</Optimization>
       <WarningLevel>Level4</WarningLevel>
       <PreprocessorDefinitions>_DEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\ssl;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\tls;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\ssl;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\tls;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -116,7 +121,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\ssl;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\tls;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsC</CompileAs>
       <DisableSpecificWarnings>4057;4100;4127;4242;4244;4706;4820;4996</DisableSpecificWarnings>
       <ExceptionHandling>
@@ -125,17 +131,15 @@
       <Optimization>Disabled</Optimization>
       <WarningLevel>Level4</WarningLevel>
       <PreprocessorDefinitions>_DEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\ssl;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\tls;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\ssl;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\tls;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -146,24 +150,23 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\ssl;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\tls;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsC</CompileAs>
       <DisableSpecificWarnings>4057;4100;4127;4242;4244;4706;4820;4996</DisableSpecificWarnings>
       <ExceptionHandling>
       </ExceptionHandling>
+      <Optimization>Full</Optimization>
       <WarningLevel>Level4</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Optimization>Full</Optimization>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\ssl;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\tls;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\ssl;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\tls;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -176,23 +179,23 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\ssl;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\tls;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsC</CompileAs>
       <DisableSpecificWarnings>4057;4100;4127;4242;4244;4706;4820;4996</DisableSpecificWarnings>
       <ExceptionHandling>
       </ExceptionHandling>
+      <Optimization>Full</Optimization>
       <WarningLevel>Level4</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Optimization>Full</Optimization>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;LIBRESSL_INTERNAL;OPENSSL_NO_HW_PADLOCK;OPENSSL_NO_ASM;inline=__inline;restrict;_CRT_SECURE_NO_WARNINGS;_CRT_DEPRECATED_NO_WARNINGS;_REENTRANT;_POSIX_THREAD_SAFE_FUNCTIONS;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0501;OPENSSL_NO_SPEED;NO_SYSLOG;HAVE_STRNLEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\ssl;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\tls;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\ssl;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\tls;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -204,46 +207,15 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="$(ProjectDir)..\..\ssl\bio_ssl.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\bs_ber.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\bs_cbb.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\bs_cbs.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\d1_both.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\d1_clnt.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\d1_enc.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\d1_lib.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\d1_meth.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\d1_pkt.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\d1_srtp.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\d1_srvr.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\pqueue.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\s23_clnt.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\s23_lib.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\s23_pkt.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\s23_srvr.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\s3_both.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\s3_cbc.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\s3_clnt.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\s3_lib.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\s3_pkt.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\s3_srvr.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\ssl_algs.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\ssl_asn1.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\ssl_cert.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\ssl_ciph.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\ssl_err.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\ssl_err2.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\ssl_lib.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\ssl_rsa.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\ssl_sess.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\ssl_stat.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\ssl_txt.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\t1_clnt.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\t1_enc.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\t1_lib.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\t1_meth.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\t1_reneg.c" />
-    <ClCompile Include="$(ProjectDir)..\..\ssl\t1_srvr.c" />
+    <ClCompile Include="$(ProjectDir)..\..\tls\tls.c" />
+    <ClCompile Include="$(ProjectDir)..\..\tls\tls_client.c" />
+    <ClCompile Include="$(ProjectDir)..\..\tls\tls_config.c" />
+    <ClCompile Include="$(ProjectDir)..\..\tls\tls_conninfo.c" />
+    <ClCompile Include="$(ProjectDir)..\..\tls\tls_server.c" />
+    <ClCompile Include="$(ProjectDir)..\..\tls\tls_peer.c" />
+    <ClCompile Include="$(ProjectDir)..\..\tls\tls_util.c" />
+    <ClCompile Include="$(ProjectDir)..\..\tls\tls_verify.c" />
+    <ClCompile Include="$(ProjectDir)..\..\tls\strsep.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
