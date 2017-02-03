@@ -1,7 +1,7 @@
 LibreSSL 2.3.3 static lib for msvc++
 ------------------------------------
 
-Compile in MSVC++ 2015 with XP toolchain.
+Compile in MSVC++ 2015.
 Based on http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.3.3.tar.gz
 
 See:
