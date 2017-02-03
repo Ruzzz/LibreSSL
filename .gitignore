@@ -152,3 +152,5 @@ $RECYCLE.BIN/
 *.orig
 lib/
 lib64/
+*.vc.db
+*.vc.opendb
