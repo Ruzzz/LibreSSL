@@ -4,6 +4,14 @@ LibreSSL 2.3.3 static lib for msvc++
 Compile in MSVC++ 2015.
 Based on http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.3.3.tar.gz
 
+Do:
+
+- git clone https://github.com/Ruzzz/LibreSSL.git LibreSSL
+- LibreSSL\LibreSSL\vs2015\VS2015_MAKE_x32.cmd
+- LibreSSL\LibreSSL\vs2015\VS2015_MAKE_x64.cmd
+- LibreSSL\LibreSSL\vs2015\INIT_ENV_VAR.cmd (as admin)
+- Use: OPENSSL_DIR/Include and OPENSSL_DIR/lib/VC
+
 See:
 
 ```
@@ -29,6 +37,9 @@ lib\
     libtls64MTd.lib
 
 vs2015\
+    VS2015_MAKE_x32.cmd
+    VS2015_MAKE_x64.cmd
+    INIT_ENV_VAR.cmd
     LibreSSL.sln
     crypto\crypto.vcxproj
     openssl\openssl.vcxproj

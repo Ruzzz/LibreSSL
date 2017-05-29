@@ -111,7 +111,7 @@
     <Link>
       <AdditionalOptions>
       </AdditionalOptions>
-      <AdditionalDependencies>Advapi32.lib;$(ProjectDir)..\..\lib\libssl32MTd.lib;$(ProjectDir)..\..\lib\libcrypto32MTd.lib;ws2_32.lib</AdditionalDependencies>
+      <AdditionalDependencies>Advapi32.lib;$(ProjectDir)..\..\lib\VC\libssl32MTd.lib;$(ProjectDir)..\..\lib\VC\libcrypto32MTd.lib;ws2_32.lib</AdditionalDependencies>
       <GenerateDebugInformation>Debug</GenerateDebugInformation>
       <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
       <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
@@ -152,7 +152,7 @@
     <Link>
       <AdditionalOptions>
       </AdditionalOptions>
-      <AdditionalDependencies>Advapi32.lib;$(ProjectDir)..\..\lib\libssl64MTd.lib;$(ProjectDir)..\..\lib\libcrypto64MTd.lib;ws2_32.lib</AdditionalDependencies>
+      <AdditionalDependencies>Advapi32.lib;$(ProjectDir)..\..\lib\VC\libssl64MTd.lib;$(ProjectDir)..\..\lib\VC\libcrypto64MTd.lib;ws2_32.lib</AdditionalDependencies>
       <GenerateDebugInformation>Debug</GenerateDebugInformation>
       <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
       <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
@@ -191,7 +191,7 @@
     <Link>
       <AdditionalOptions>
       </AdditionalOptions>
-      <AdditionalDependencies>Advapi32.lib;$(ProjectDir)..\..\lib\libssl32MT.lib;$(ProjectDir)..\..\lib\libcrypto32MT.lib;ws2_32.lib</AdditionalDependencies>
+      <AdditionalDependencies>Advapi32.lib;$(ProjectDir)..\..\lib\VC\libssl32MT.lib;$(ProjectDir)..\..\lib\VC\libcrypto32MT.lib;ws2_32.lib</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
       <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
@@ -229,7 +229,7 @@
     <Link>
       <AdditionalOptions>
       </AdditionalOptions>
-      <AdditionalDependencies>Advapi32.lib;$(ProjectDir)..\..\lib\libssl64MT.lib;$(ProjectDir)..\..\lib\libcrypto64MT.lib;ws2_32.lib</AdditionalDependencies>
+      <AdditionalDependencies>Advapi32.lib;$(ProjectDir)..\..\lib\VC\libssl64MT.lib;$(ProjectDir)..\..\lib\VC\libcrypto64MT.lib;ws2_32.lib</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
       <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>

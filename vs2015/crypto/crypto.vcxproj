@@ -75,23 +75,23 @@
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(ProjectDir)..\..\lib\</OutDir>
+    <OutDir>$(ProjectDir)..\..\lib\VC\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)32MTd</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>$(ProjectDir)..\..\lib\</OutDir>
+    <OutDir>$(ProjectDir)..\..\lib\VC\</OutDir>
     <TargetName>$(ProjectName)64MTd</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(ProjectDir)..\..\lib\</OutDir>
+    <OutDir>$(ProjectDir)..\..\lib\VC\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)32MT</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>$(ProjectDir)..\..\lib\</OutDir>
+    <OutDir>$(ProjectDir)..\..\lib\VC\</OutDir>
     <TargetName>$(ProjectName)64MT</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
